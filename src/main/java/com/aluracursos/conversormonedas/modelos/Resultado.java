@@ -16,10 +16,11 @@ public class Resultado {
         public Resultado(double valor, double total) {
                 this.valor = valor;
                 this.total = total;
-                this.fechaHoraActual = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm"));
+
         }
 
         public String getFechaHoraActual() {
+
                 return fechaHoraActual;
         }
 
@@ -52,6 +53,10 @@ public class Resultado {
                 this.codigoMoneda2 = codigoMoneda2;
         }
 
+        public void setFechaHoraActual(String fechaHoraActual) {
+                this.fechaHoraActual = fechaHoraActual;
+        }
+
         @Override
         public String toString() {
                 return "Resultado{" +
@@ -60,7 +65,7 @@ public class Resultado {
                         ", moneda1='" + moneda1 + '\'' +
                         ", moneda2='" + moneda2 + '\'' +
                         ", cantidad='" + cantidad + '\'' +
-                        ", fechaHoraActual='" + fechaHoraActual + '\'' +
+                        ", fechaHoraActual='" + fechaHoraActual +'\'' +
                         '}';
         }
 }
