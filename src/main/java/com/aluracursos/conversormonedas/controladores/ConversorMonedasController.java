@@ -1,6 +1,7 @@
 package com.aluracursos.conversormonedas.controladores;
 
 import com.aluracursos.conversormonedas.modelos.ApiMonedas;
+import com.aluracursos.conversormonedas.modelos.HistorialMonedas;
 import com.aluracursos.conversormonedas.modelos.Resultado;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,11 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.xml.transform.Result;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping("/conversor")
 public class ConversorMonedasController {
     ApiMonedas apiMonedas = new ApiMonedas();
+    HistorialMonedas historialMonedas = new HistorialMonedas();
     String origen = "Dólar Estadounidense";
     String destino = "Peso Mexicano";
     @GetMapping("/")
@@ -32,6 +35,13 @@ public class ConversorMonedasController {
        model.addAttribute("cantidad",cantidad);
        model.addAttribute("monedas",apiMonedas.getMonedas().keySet());
        model.addAttribute("resultado",resultado);
+       historialMonedas.guardarResultado(resultado);
        return "index";
+    }
+    @GetMapping("/historial")
+    public String historial(Model model){
+        var resultados = historialMonedas.obtenerResultados();
+        model.addAttribute("resultados",resultados);
+        return "historial";
     }
 }

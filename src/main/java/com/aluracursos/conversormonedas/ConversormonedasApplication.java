@@ -1,6 +1,7 @@
 package com.aluracursos.conversormonedas;
 
 import com.aluracursos.conversormonedas.modelos.ApiMonedas;
+import com.aluracursos.conversormonedas.modelos.HistorialMonedas;
 import com.aluracursos.conversormonedas.modelos.Resultado;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
