@@ -10,9 +10,6 @@ public class ConversormonedasApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ConversormonedasApplication.class, args);
-		ApiMonedas apiMonedas = new ApiMonedas();
-		Resultado resultado = apiMonedas.obtenerResultado("Dólar Estadounidense","Peso Mexicano","100");
-		System.out.println(resultado.toString());
 	}
 
 }
