@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Historial</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+th:replace="layout">
 <h1>Historial</h1>
-<div class="container">
+<div class="container" th:fragment="content">
     <div class="card-panel" th:each="resultado : ${resultados} ">
         <h5>Resultado de la Conversión:</h5>
         <pre><p th:text="${resultado.toString()}"></p></pre>
     </div>
 </div>
-</body>
 </html>

@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Convertir Monedas</title>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Let browser know website is optimized for mobile-->
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
-<div class="container">
+<html xmlns:th="http://www.thymeleaf.org"
+th:replace="layout">
+<main class="container" th:fragment="content">
     <h3>Convertir Monedas</h3>
-    <form action="" method="post" class="col s12">
+    <form th:action="@{/conversor/}" method="post" class="col s12">
         <div class="row">
             <div class="input-field col s6">
                 <select name="monedaOrigen">
@@ -39,25 +28,17 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">attach_money</i>
-                <input type="number" id="cantidad" name="cantidad" class="validate" required th:value="${cantidad}" step="any">
+                <input type="number" id="cantidad" name="cantidad" class="validate " required th:value="${cantidad}" step="any">
                 <label for="cantidad">Escribe la cantidad:</label>
             </div>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Convertir
-            <i class="material-icons right">send</i>
+        <button class="btn waves-effect waves-light green darken-1" type="submit" name="action">Convertir
+            <i class="material-icons right">currency_exchange</i>
         </button>
     </form>
     <div th:if="${resultado != null}" class="card-panel">
         <h5>Resultado de la Conversión:</h5>
         <pre><p th:text="${resultado.toString()}"></p></pre>
-    </div></div>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('select');
-        var instances = M.FormSelect.init(elems);
-    });
-</script>
-</body>
+    </div>
+</main>
 </html>
