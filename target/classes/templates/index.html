@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org"
+th:replace="layout">
+<main class="container" th:fragment="content">
+    <h3>Convertir Monedas</h3>
+    <form th:action="@{/conversor/}" method="post" class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                <select name="monedaOrigen">
+                    <option th:each="moneda : ${monedas}"
+                            th:value="${moneda}"
+                            th:text="${moneda}"
+                            th:attr="selected=${moneda == origen} ? 'selected' : null">
+                    </option>
+                </select>
+                <label>Moneda Origen</label>
+            </div>
+            <div class="input-field col s6">
+                <select name="monedaDestino">
+                    <option th:each="moneda : ${monedas}"
+                            th:value="${moneda}"
+                            th:text="${moneda}"
+                            th:attr="selected=${moneda == destino} ? 'selected' : null">
+                    </option>
+                </select>
+                <label>Moneda Destino</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input type="number" id="cantidad" name="cantidad" class="validate " required th:value="${cantidad}" step="any">
+                <label for="cantidad">Escribe la cantidad:</label>
+            </div>
+        </div>
+        <button class="btn waves-effect waves-light green darken-1" type="submit" name="action">Convertir
+            <i class="material-icons right">currency_exchange</i>
+        </button>
+    </form>
+    <div th:if="${resultado != null}" class="card-panel">
+        <h5>Resultado de la Conversión:</h5>
+        <pre><p th:text="${resultado.toString()}"></p></pre>
+    </div>
+</main>
+</html>

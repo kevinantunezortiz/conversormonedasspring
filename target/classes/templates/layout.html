@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- CDN de Material Icons -->
+<title>Conversor de Monedas</title>
+</head>
+<body>
+
+<nav class="blue darken-4">
+<div class="nav-wrapper">
+<a href="#" class="brand-logo center"><i class="material-icons">payments</i> Logo</a>
+<ul id="nav-mobile" class="left hide-on-med-and-down">
+<li><a th:href="@{/conversor/}"><i class="material-icons left">currency_exchange</i> Convertir Monedas</a></li>
+<li><a th:href="@{/conversor/historial}"><i class="material-icons left">history</i> Historial</a></li>
+</ul>
+<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+</div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+<li><a th:href="@{/conversor/}"><i class="material-icons">currency_exchange</i> Convertir Monedas</a></li>
+<li><a th:href="@{/conversor/historial}"><i class="material-icons">history</i> Historial</a></li>
+</ul>
+<main th:insert="~{::content}">
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+$(document).ready(function(){
+$('.sidenav').sidenav();
+$('select').formSelect();
+});
+</script>
+
+</body>
+</html>

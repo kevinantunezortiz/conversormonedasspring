@@ -1,0 +1,5 @@
+com\aluracursos\conversormonedas\modelos\Resultado.class
+com\aluracursos\conversormonedas\ConversormonedasApplication.class
+com\aluracursos\conversormonedas\modelos\ApiMonedas.class
+com\aluracursos\conversormonedas\controladores\ConversorMonedasController.class
+com\aluracursos\conversormonedas\modelos\HistorialMonedas.class
