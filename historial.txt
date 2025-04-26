@@ -1,1 +1,2 @@
 {"conversion_rate":19.6192,"conversion_result":239589.6704,"moneda1":"Dólar Estadounidense","moneda2":"Peso Mexicano","codigoMoneda1":"USD","codigoMoneda2":"MXN","cantidad":"12212","fechaHoraActual":"2025/04/23 13:49"}
+{"conversion_rate":19.555,"conversion_result":1955.5,"moneda1":"Dólar Estadounidense","moneda2":"Peso Mexicano","codigoMoneda1":"USD","codigoMoneda2":"MXN","cantidad":"100","fechaHoraActual":"2025/04/25 20:43"}
