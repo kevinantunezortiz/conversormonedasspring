@@ -1,6 +1,6 @@
 FROM openjdk:17-jdk-slim
 
-COPY target/conversormonedasspring-0.0.1-SNAPSHOT.jar app.jar
+COPY target/conversormonedas-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
